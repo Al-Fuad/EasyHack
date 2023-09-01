@@ -56,5 +56,5 @@ void nmap(){
         strcat(cmd," ");
         strcat(cmd,outputFile);
     }
-    puts(cmd);
+    system(cmd);
 }
