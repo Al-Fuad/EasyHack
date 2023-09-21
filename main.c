@@ -16,7 +16,7 @@
  */
 
 #include"features.h"
-#include"nmap.h"
+#include"src/tools/nmap.h"
 
 int main()
 {
