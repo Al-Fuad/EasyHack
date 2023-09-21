@@ -1,4 +1,5 @@
 #include "features.h"
+#include "tools.h"
 
 void nmap(){
     char nmapScan[100][100] = {
@@ -10,18 +11,20 @@ void nmap(){
     char output[4][100] = {
         "-oN", "-oX", "-oS"
     };
-    char cmd[100];
-    char target[100];
-    char ports[100];
+    struct tools nmap;
+    // nmap.cmd;
+    // char cmd[100];
+    // char target[100];
+    // char ports[100];
     char yn[1];
-    char outputFile[100];
+    // char outputFile[100];
     int type = 1;
     int op;
     banner("Nmap");
     printf("Formats :\n\n1|| nmap Target\n\n2|| nmap -ScanType Target\n\n3|| nmap -Ports Target\n\n4|| nmap -ScanType -Ports Target\n\nEnter your choice : ");
     scanf("%d",&op);
     printf("\nEnter the target : ");
-    scanf("%s",target);
+    scanf("%s",nmap.target);
     if(op == 2 || op == 4){
         for(int i = 0; i < 4; i++){
             printf("\n%d|| %s\n",i+1,nmapScanName[i]);
@@ -30,31 +33,32 @@ void nmap(){
         scanf("%d",&type);
     }
     if(type == 1){
-        strcat(cmd,"nmap ");
+        strcat(nmap.cmd,"nmap ");
     }
     else if(type == 2 || type == 3 || type == 4){
-        strcat(cmd,"sudo nmap ");
+        strcat(nmap.cmd,"sudo nmap ");
     }
-    (op == 2 || op == 4)?strcat(cmd,nmapScan[type-1]):strcat(cmd,"");
+    (op == 2 || op == 4)?strcat(nmap.cmd,nmapScan[type-1]):strcat(nmap.cmd,"");
     if(op == 3 || op == 4){
         printf("\nEnter ports : ");
-        scanf("%s", ports);
-        strcat(cmd," -p");
-        strcat(cmd,ports);
+        scanf("%s", nmap.ports);
+        strcat(nmap.cmd," -p");
+        strcat(nmap.cmd,nmap.ports);
     }
-    strcat(cmd," ");
-    strcat(cmd,target);
+    strcat(nmap.cmd," ");
+    strcat(nmap.cmd,nmap.target);
+    puts(nmap.cmd);
     printf("\nDo you want to save? Y/N : ");
     scanf("%s",yn);
-    if(strcmp(yn,"Y")||strcmp(yn,"y")){
+    if(!(strcmp(yn,"Y"))||!(strcmp(yn,"y"))){
         printf("\nFormat :\n\n1|| Text\n\n2|| XML\n\n3|| Script Kiddle\n\nEnter your choice : ");
         scanf("%d",&op);
         printf("\nEnter file name : ");
-        scanf("%s",outputFile);
-        strcat(cmd," ");
-        strcat(cmd,output[op-1]);
-        strcat(cmd," ");
-        strcat(cmd,outputFile);
+        scanf("%s",nmap.outputFile);
+        strcat(nmap.cmd," ");
+        strcat(nmap.cmd,output[op-1]);
+        strcat(nmap.cmd," ");
+        strcat(nmap.cmd,nmap.outputFile);
     }
-    system(cmd);
+    puts(nmap.cmd);
 }

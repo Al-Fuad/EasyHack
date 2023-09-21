@@ -22,7 +22,7 @@ int main()
 {
     int tool;
     banner("Easy Hack");
-    printf("Enter tool number : ");
+    printf("Tools :\n1|| Nmap\n2|| LBD\n3|| WafW00f\n4|| DIRSearch\n5|| NetCat\n6|| JohnTheRipper\n7|| SQLMap\nEnter tool number : ");
     scanf("%d",&tool);
     switch (tool)
     {
