@@ -81,6 +81,6 @@ The development of **EasyHack** will follow a structured methodology:
 
 ![footer]
 
-[horizontal line]: Aspose.Words.85e62d6f-f857-419a-931f-c0a38e758d5a.001.png
-[short line]: Aspose.Words.85e62d6f-f857-419a-931f-c0a38e758d5a.002.png
-[footer]: Aspose.Words.85e62d6f-f857-419a-931f-c0a38e758d5a.004.png
+[horizontal line]: src/img/Aspose.Words.85e62d6f-f857-419a-931f-c0a38e758d5a.001.png
+[short line]: src/img/Aspose.Words.85e62d6f-f857-419a-931f-c0a38e758d5a.002.png
+[footer]: src/img/Aspose.Words.85e62d6f-f857-419a-931f-c0a38e758d5a.004.png
