@@ -2,7 +2,7 @@
 
 ![short line]
 
-<a name="_aczyuw2yex2w"></a>*Project Proposal![](Aspose.Words.85e62d6f-f857-419a-931f-c0a38e758d5a.003.png)*
+<a name="_aczyuw2yex2w"></a>*Project Proposal![](src/img/Aspose.Words.85e62d6f-f857-419a-931f-c0a38e758d5a.003.png)*
 
 ![short line]
 
