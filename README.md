@@ -81,6 +81,6 @@ The development of **EasyHack** will follow a structured methodology:
 
 ![footer]
 
-[horizontal line]: src/img/line.png
+[horizontal line]: src/img/line1.png
 [short line]: src/img/line2.png
 [footer]: src/img/line3.png
