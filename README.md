@@ -2,7 +2,7 @@
 
 ![short line]
 
-<a name="_aczyuw2yex2w"></a>*Project Proposal![](src/img/diu.png)*
+<a name="_aczyuw2yex2w"></a>*<h2>Project Proposal!</h2>[](src/img/diu.png)*
 
 ![short line]
 
