@@ -8,19 +8,19 @@
 
 #Project Team
 
-**1st Programmer 	  : S. M Al Fuad Nur**
+**1st Programmer  : S. M Al Fuad Nur**
 
 **Programmer ID	  : 0242220005341056**
 
-**2nd Programmer	  : Samin Sadaf**
+**2nd Programmer  : Samin Sadaf**
 
-**Programmer ID	  : 0242220005341012**
+**Programmer ID   : 0242220005341012**
 
-**3rd Programmer	  : Md. Ilias Kabir**
+**3rd Programmer  : Md. Ilias Kabir**
 
-**Programmer ID	  : 0242220005341098**
+**Programmer ID   : 0242220005341098**
 
-**Section		  : B 		Batch		: 39**
+**Section	      : B 		Batch		: 39**
 
 **Subject Name	  : Software Development Capstone Project(SE133)**
 
@@ -31,7 +31,7 @@
 
 
 
-<a name="_m77rzvcm1rjy"></a><a name="_ip8f5j247253"></a><a name="_bflsrw8bnedg"></a><a name="_ufux6eyll2qp"></a>**EasyHack - Console-Based Penetration Testing Tool Management**
+<a name="_m77rzvcm1rjy"></a><a name="_ip8f5j247253"></a><a name="_bflsrw8bnedg"></a><a name="_ufux6eyll2qp"></a>###EasyHack - Console-Based Penetration Testing Tool Management###
 
 <a name="_aud0ss2hz0pm"></a>**Empowering Cybersecurity, One Command at a Time.**
 
@@ -41,7 +41,7 @@
 
 <a name="_9ljo279d537i"></a>**Requirements**
 
-###EasyHack###, as a console-based application, will need to meet the following key requirements:
+**EasyHack**, as a console-based application, will need to meet the following key requirements:
 
 **1. Command-Line Interface (CLI):** Develop an efficient and user-friendly command-line interface for managing penetration testing tools.
 
