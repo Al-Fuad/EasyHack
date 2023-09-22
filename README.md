@@ -2,12 +2,6 @@
 
 ![short line]
 
-<a name="_aczyuw2yex2w"></a>*<h2>Project Proposal!</h2>*
-
-![diu]
-
-![short line]
-
 #Project Team
 
 **1st Programmer  : S. M Al Fuad Nur**
@@ -28,6 +22,7 @@
 
 **Department of Software Engineering**
 
+![short line]
 
 
 
@@ -86,4 +81,3 @@ The development of **EasyHack** will follow a structured methodology:
 [horizontal line]: src/img/line1.png
 [short line]: src/img/line2.png
 [footer]: src/img/line3.png
-[diu] : src/img/diu.png
