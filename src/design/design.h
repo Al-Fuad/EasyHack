@@ -1,5 +1,5 @@
-#ifndef _FEATURES_H_
-#define _FEATURES_H_
+#ifndef _DESIGN_H_
+#define _DESIGN_H_
 
 #include<stdio.h>
 #include<string.h>
