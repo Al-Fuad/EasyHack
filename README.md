@@ -41,7 +41,7 @@
 
 <a name="_9ljo279d537i"></a>**Requirements**
 
-**EasyHack**, as a console-based application, will need to meet the following key requirements:
+###EasyHack###, as a console-based application, will need to meet the following key requirements:
 
 **1. Command-Line Interface (CLI):** Develop an efficient and user-friendly command-line interface for managing penetration testing tools.
 
