@@ -35,11 +35,11 @@
 
 <a name="_aud0ss2hz0pm"></a>**Empowering Cybersecurity, One Command at a Time.**
 
-<a name="_c7v14tf1v3jn"></a><a name="_37e1zwq48kyg"></a>**Abstract**
+<a name="_c7v14tf1v3jn"></a><a name="_37e1zwq48kyg"></a><h3>Abstract</h3>
 
 **EasyHack** is a project aimed at simplifying the management of penetration testing tools through a command-line interface (CLI). Penetration testers often work with various tools like nmap, John the Ripper, HashCat, NetCat, SQLMap, and IP changers. **EasyHack** provides a centralized and efficient platform to manage and utilize these tools, addressing the growing need for effective cybersecurity solutions. This project responds to the increasing demand for streamlined cybersecurity tools in an ever-evolving threat landscape.
 
-<a name="_9ljo279d537i"></a>**Requirements**
+<a name="_9ljo279d537i"></a><h3>Requirements</h3>
 
 **EasyHack**, as a console-based application, will need to meet the following key requirements:
 
@@ -55,7 +55,7 @@
 
 **6. Documentation:** Develop detailed and accessible command-line documentation and guides to assist users in effectively utilizing **EasyHack** as a console-based application.
 
-<a name="_36nmj4xt4iwn"></a>**Methodology**
+<a name="_36nmj4xt4iwn"></a><h3>Methodology</h3>
 
 The development of **EasyHack** will follow a structured methodology:
 
@@ -73,7 +73,7 @@ The development of **EasyHack** will follow a structured methodology:
 
 **7. Ethical Considerations:** Address ethical considerations regarding responsible tool usage within the console-based environment.
 
-<a name="_uwfqxy3dbmvj"></a>**Conclusion**
+<a name="_uwfqxy3dbmvj"></a><h3>Conclusion</h3>
 
 **EasyHack** represents a significant step toward simplifying the management of penetration testing tools through a user-friendly command-line interface. By providing a centralized tool library, configuration options, and update mechanisms, **EasyHack** aims to enhance the productivity and efficiency of penetration testers while contributing to cybersecurity education and awareness in the console-based domain. This project holds the potential to make a positive impact on the cybersecurity community by simplifying tool management and promoting ethical tool usage in the CLI environment.
 
