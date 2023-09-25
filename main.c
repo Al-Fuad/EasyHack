@@ -19,11 +19,7 @@
  * ||===================================================||
  */
 
-#include"src/design/design.h"
-#include"src/tools/nmap.h"
-#include"src/tools/dirb.h"
-#include"src/tools/lbd.h"
-#include"src/tools/wafw00f.h"
+#include"header.h"
 
 int main()
 {
@@ -42,6 +38,9 @@ int main()
     }
     else if(tool == 4){
         wafw00f();
+    }
+    else if(tool == 6){
+        john();
     }
     return 0;
 }
