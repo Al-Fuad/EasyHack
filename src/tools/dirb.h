@@ -3,10 +3,9 @@
 
 void dirb(){
     banner("Dirb");
-    tool dirb;
-    strcpy(dirb.cmd,"dirb ");
+    tool dirb = {'\0'};
+    strcpy(dirb.name,"dirb");
     printf("\nEnter the target : ");
     scanf("%s",dirb.target);
-    strcat(dirb.cmd, dirb.target);
-    run(dirb.cmd);
+    cc(dirb);
 }
