@@ -14,6 +14,9 @@ struct tools
     char time[100];
     char type[100];
     char ports[100];
+    char extention[100];
+    char header[100];
+    char ignoreCode[100];
     char wordlists[100];
     char outputType[100];
     char outputFile[100];
@@ -48,6 +51,22 @@ void cc(tool t){
     if(strlen(t.more) != 0){
         strcat(t.cmd, " ");
         strcat(t.cmd, t.more);
+    }
+    if(strlen(t.wordlists) != 0){
+        strcat(t.cmd, " ");
+        strcat(t.cmd, t.wordlists);
+    }
+    if(strlen(t.extention) != 0){
+        strcat(t.cmd, " ");
+        strcat(t.cmd, t.extention);
+    }
+    if(strlen(t.header) != 0){
+        strcat(t.cmd, " ");
+        strcat(t.cmd, t.header);
+    }
+    if(strlen(t.ignoreCode) != 0){
+        strcat(t.cmd, " ");
+        strcat(t.cmd, t.ignoreCode);
     }
     puts(t.cmd);
 }
