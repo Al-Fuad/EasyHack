@@ -11,6 +11,7 @@ struct tools
     char cmd[100];
     char name[100];
     char target[100];
+    char format[100];
     char time[100];
     char type[100];
     char ports[100];
@@ -18,7 +19,6 @@ struct tools
     char header[100];
     char ignoreCode[100];
     char wordlists[100];
-    char outputType[100];
     char outputFile[100];
     char more[100];
 };
@@ -36,15 +36,17 @@ void cc(tool t){
         strcat(t.cmd," ");
         strcat(t.cmd,t.ports);
     }
+    if(strlen(t.format) != 0){
+        strcat(t.cmd," ");
+        strcat(t.cmd,t.format);
+    }
     strcat(t.cmd, " ");
     strcat(t.cmd,t.target);
     if(strlen(t.time) != 0){
         strcat(t.cmd, " ");
         strcat(t.cmd, t.time);
     }
-    if(strlen(t.outputType) != 0){
-        strcat(t.cmd," ");
-        strcat(t.cmd,t.outputType);
+    if(strlen(t.outputFile) != 0){
         strcat(t.cmd," ");
         strcat(t.cmd,t.outputFile);
     }
