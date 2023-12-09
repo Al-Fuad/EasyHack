@@ -31,25 +31,25 @@ void nmap(){
         banner("Nmap");
         printf("1|| Set Target\t\t\t\t\t\t\t");
         if(!(strlen(nmap.target) == 0))
-            printf("✓");
+            printf("☑");
         else
             printf("□");
         printf("\n\n");
         printf("2|| Set Ports\t\t\t\t\t\t\t");
         if(!(strlen(nmap.ports) == 0))
-            printf("✓");
+            printf("☑");
         else
             printf("□");
         printf("\n\n");
         printf("3|| Set Scan Type\t\t\t\t\t\t");
         if(!(strlen(nmap.type) == 0))
-            printf("✓");
+            printf("☑");
         else
             printf("□");
         printf("\n\n");
         printf("4|| Set Speed\t\t\t\t\t\t\t");
         if(!(strlen(nmap.time) == 0))
-            printf("✓");
+            printf("☑");
         else
             printf("□");
         printf("\n\n");
