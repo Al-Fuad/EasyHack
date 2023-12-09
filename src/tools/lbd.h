@@ -3,10 +3,9 @@
 
 void lbd(){
     banner("LBD");
-    tool lbd;
-    strcpy(lbd.cmd,"ldb ");
+    tool lbd = {'\0'};
+    strcpy(lbd.name,"ldb");
     printf("\nEnter the target : ");
     scanf("%s",lbd.target);
-    strcat(lbd.cmd, lbd.target);
-    run(lbd.cmd);
+    cc(lbd);
 }
