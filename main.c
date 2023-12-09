@@ -28,7 +28,7 @@ int main()
 {
     int tool;
     banner("Easy Hack");
-    printf("Tools :\n1|| Nmap\n2|| Dirb\n3|| LBD\n4|| WafW00f\n5|| NetCat\n6|| JohnTheRipper\n7|| SQLMap\nEnter tool number : ");
+    printf("Tools :\n\n1|| Nmap\n\n2|| Dirb\n\n3|| John The Ripper\n\n4|| WafW00f\n\n5|| NetCat\n\n6|| LBD\n\n7|| SQLMap\n\nEnter tool number : ");
     scanf("%d",&tool);
     if(tool == 1){
         nmap();
@@ -37,13 +37,13 @@ int main()
         dirb();
     }
     else if(tool == 3){
-        lbd();
+        john();
     }
     else if(tool == 4){
         wafw00f();
     }
     else if(tool == 6){
-        john();
+        lbd();
     }
     return 0;
 }
