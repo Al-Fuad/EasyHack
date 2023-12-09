@@ -10,37 +10,37 @@ void dirb(){
         banner("Dirb");
         printf("1|| Set Target\t\t\t\t\t\t\t");
         if(!(strlen(dirb.target) == 0))
-            printf("✓");
+            printf("☑");
         else
             printf("□");
         printf("\n\n");
         printf("2|| Set Wordlist\t\t\t\t\t\t");
         if(!(strlen(dirb.wordlists) == 0))
-            printf("✓");
+            printf("☑");
         else
             printf("□");
         printf("\n\n");
         printf("3|| Set Speed\t\t\t\t\t\t\t");
         if(!(strlen(dirb.time) == 0))
-            printf("✓");
+            printf("☑");
         else
             printf("□");
         printf("\n\n");
         printf("4|| Set Extention\t\t\t\t\t\t");
         if(!(strlen(dirb.extention) == 0))
-            printf("✓");
+            printf("☑");
         else
             printf("□");
         printf("\n\n");
         printf("5|| Set Header\t\t\t\t\t\t\t");
         if(!(strlen(dirb.header) == 0))
-            printf("✓");
+            printf("☑");
         else
             printf("□");
         printf("\n\n");
         printf("6|| Set Ignore Response Code\t\t\t\t\t");
         if(!(strlen(dirb.ignoreCode) == 0))
-            printf("✓");
+            printf("☑");
         else
             printf("□");
         printf("\n\n");
