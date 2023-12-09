@@ -29,54 +29,42 @@ void nmap(){
 
     while(true){
         banner("Nmap");
-        printf("1|| Set Target\t\t\t\t\t\t\t");
-        if(!(strlen(nmap.target) == 0))
-            printf("☑");
-        else
-            printf("□");
-        printf("\n\n");
-        printf("2|| Set Ports\t\t\t\t\t\t\t");
-        if(!(strlen(nmap.ports) == 0))
-            printf("☑");
-        else
-            printf("□");
-        printf("\n\n");
-        printf("3|| Set Scan Type\t\t\t\t\t\t");
-        if(!(strlen(nmap.type) == 0))
-            printf("☑");
-        else
-            printf("□");
-        printf("\n\n");
-        printf("4|| Set Speed\t\t\t\t\t\t\t");
-        if(!(strlen(nmap.time) == 0))
-            printf("☑");
-        else
-            printf("□");
-        printf("\n\n");
-        printf("0|| Next(Enter target first. Otherwise it dosn't work.)\n\n");
-        printf("Enter your choice: ");
-        scanf("%d", &op);
+        lineMark(1, "Set Target", strlen(nmap.target));
+        lineMark(2, "Set Ports", strlen(nmap.ports));
+        lineMark(3, "Set Scan Type", strlen(nmap.type));
+        lineMark(4, "Set Speed", strlen(nmap.time));
+        line(0, "Next(Enter target first. Otherwise it dosn't work.)");
+        op = intInput();
         if(op == 0){
             if(strlen(nmap.target) != 0){
-                printf("\nDo you want to save?\n\n1|| Yes\n\n2|| No\n\nEnter your choice: ");
-                scanf("%d", &op2);
+                heading("Do you want to save?");
+                line(1, "Yes");
+                line(2, "No");
+                op2 = intInput();
                 if(op2 == 1){
-                    printf("\nFile Saving Format:\n\n1|| Text\n\n2|| XML\n\n3|| Script Kiddle\n\nEnter your choice: ");
-                    scanf("%d",&op3);
-                    char fileName[100];
-                    printf("\nEnter file name: ");
-                    scanf("%s",fileName);
-                    strcpy(nmap.outputFile, output[op3-1]);
+                    heading("File Saving Format");
+                    line(1,"Text");
+                    line(2,"XML");
+                    line(3,"Script Kiddle");
+                    op3 = intInput();
+                    strcat(nmap.outputFile, output[op3-1]);
                     strcat(nmap.outputFile, "src/saves/nmap/");
+                    char fileName[100];
+                    heading("Enter File Name");
+                    easyHack();
+                    scanf("%s",fileName);
                     strcat(nmap.outputFile, fileName);
                     strcat(nmap.outputFile, extension[op3-1]);
                 }
-                printf("\nDo you want to script?\n\n1|| Yes\n\n2|| No\n\nEnter your choice: ");
-                scanf("%d", &op2);
+                heading("Do you want to script?");
+                line(1,"Yes");
+                line(2,"No");
+                op2 = intInput();
                 if(op2 == 1){
-                    printf("\nScript : ");
                     strcpy(nmap.more, "--script ");
+                    heading("Script");
                     char more[100];
+                    easyHack();
                     scanf("%s", more);
                     strcat(nmap.more, more);
                 }
@@ -84,23 +72,23 @@ void nmap(){
             }
         }
         else if(op == 1){
-            printf("\nEnter the target : ");
-            scanf("%s",nmap.target);
+            heading("Enter the target");
+            stringInput(nmap.target);
         }
         else if(op == 2){
             char ports[100];
-            printf("\nEnter ports: ");
+            heading("Enter ports");
+            easyHack();
             scanf("%s", ports);
             strcpy(nmap.ports,"-p ");
             strcat(nmap.ports,ports);
         }
         else if(op == 3){
-            printf("\nScan Type: \n");
+            heading("Scan Type");
             for(int i = 0; i < 4; i++){
-                printf("\n%d|| %s\n",i+1,nmapScanName[i]);
+                line(i+1,nmapScanName[i]);
             }
-            printf("\nEnter your choice: ");
-            scanf("%d",&type);
+            type = intInput();
             // If root access is needed.
             if(type == 2 || type == 3 || type == 4){
                 nmap.isRoot = true;
@@ -109,8 +97,14 @@ void nmap(){
             strcpy(nmap.type,nmapScan[type-1]);
         }
         else if(op == 4){
-            printf("\nTime Format:\n\n0|| Normal\n\n1|| Paranoid\n\n2|| Sneaky\n\n3|| Polite\n\n4|| Aggressive\n\n5|| Insane\n\nEnter your choice: ");
-            scanf("%d",&op2);
+            heading("Time Format");
+            line(1, "Paranoid");
+            line(2, "Sneaky");
+            line(3, "Polite");
+            line(4, "Aggressive");
+            line(5, "Insane");
+            line(0, "Normal");
+            op2 = intInput();
             if(op2 != 0)
                 strcpy(nmap.time, time[op]);
         }
