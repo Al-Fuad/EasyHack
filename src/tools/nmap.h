@@ -10,7 +10,7 @@ void nmap(){
         "TCP Connect Scan", "UDP Scan", "Null Scan", "TCP SYN Scan"
     };
     char output[4][100] = {
-        "-oN", "-oX", "-oS"
+        "-oN ", "-oX ", "-oS "
     };
     char extension[][100] = {
         ".txt", ".xml", ".txt"
@@ -21,69 +21,99 @@ void nmap(){
 
     tool nmap = {'\0'};
 
+    strcpy(nmap.name,"nmap");
     nmap.isRoot = false;
 
     int type;
-    int op;
-    banner("Nmap");
-    printf("Formats :\n\n1|| nmap Target\n\n2|| nmap -ScanType Target\n\n3|| nmap -Ports Target\n\n4|| nmap -ScanType -Ports Target\n\nEnter your choice : ");
-    scanf("%d",&op);
-    printf("\nEnter the target : ");
-    scanf("%s",nmap.target);
+    int op, op2, op3;
 
-    strcpy(nmap.name,"nmap");
-
-    if(op == 2 || op == 4){
-        for(int i = 0; i < 4; i++){
-            printf("\n%d|| %s\n",i+1,nmapScanName[i]);
+    while(true){
+        banner("Nmap");
+        printf("1|| Set Target\t\t\t\t\t\t\t");
+        if(!(strlen(nmap.target) == 0))
+            printf("✓");
+        else
+            printf("□");
+        printf("\n\n");
+        printf("2|| Set Ports\t\t\t\t\t\t\t");
+        if(!(strlen(nmap.ports) == 0))
+            printf("✓");
+        else
+            printf("□");
+        printf("\n\n");
+        printf("3|| Set Scan Type\t\t\t\t\t\t");
+        if(!(strlen(nmap.type) == 0))
+            printf("✓");
+        else
+            printf("□");
+        printf("\n\n");
+        printf("4|| Set Speed\t\t\t\t\t\t\t");
+        if(!(strlen(nmap.time) == 0))
+            printf("✓");
+        else
+            printf("□");
+        printf("\n\n");
+        printf("0|| Next(Enter target first. Otherwise it dosn't work.)\n\n");
+        printf("Enter your choice: ");
+        scanf("%d", &op);
+        if(op == 0){
+            if(strlen(nmap.target) != 0){
+                printf("\nDo you want to save?\n\n1|| Yes\n\n2|| No\n\nEnter your choice: ");
+                scanf("%d", &op2);
+                if(op2 == 1){
+                    printf("\nFile Saving Format:\n\n1|| Text\n\n2|| XML\n\n3|| Script Kiddle\n\nEnter your choice: ");
+                    scanf("%d",&op3);
+                    char fileName[100];
+                    printf("\nEnter file name: ");
+                    scanf("%s",fileName);
+                    strcpy(nmap.outputFile, output[op3-1]);
+                    strcat(nmap.outputFile, "src/saves/nmap/");
+                    strcat(nmap.outputFile, fileName);
+                    strcat(nmap.outputFile, extension[op3-1]);
+                }
+                printf("\nDo you want to script?\n\n1|| Yes\n\n2|| No\n\nEnter your choice: ");
+                scanf("%d", &op2);
+                if(op2 == 1){
+                    printf("\nScript : ");
+                    strcpy(nmap.more, "--script ");
+                    char more[100];
+                    scanf("%s", more);
+                    strcat(nmap.more, more);
+                }
+                break;
+            }
         }
-        printf("\nEnter the scan type : ");
-        scanf("%d",&type);
-        // If root access is needed.
-        if(type == 2 || type == 3 || type == 4){
-            nmap.isRoot = true;
+        else if(op == 1){
+            printf("\nEnter the target : ");
+            scanf("%s",nmap.target);
         }
-        // For Scan Type Only
-        strcpy(nmap.type,nmapScan[type-1]);
-    }
-    
-    if(op == 3 || op == 4){
-        char ports[100];
-        printf("\nEnter ports : ");
-        strcpy(nmap.ports,"-p ");
-        scanf("%s", ports);
-        strcat(nmap.ports,ports);
-    }
-
-    printf("\nTime Format :\n\n0|| Normal\n\n1|| Paranoid\n\n2|| Sneaky\n\n3|| Polite\n\n4|| Aggressive\n\n5|| Insane\n\nEnter your choice : ");
-    scanf("%d",&op);
-    if(op != 0)
-        strcpy(nmap.time, time[op]);
-
-
-
-    printf("\nSaving Format :\n\n0|| Don't save\n\n1|| Text\n\n2|| XML\n\n3|| Script Kiddle\n\nEnter your choice : ");
-    scanf("%d",&op);
-
-    // If user want to save file.
-    if(op==1||op==2||op==3){
-        char outputFileName[100];
-        printf("\nEnter file name : ");
-        scanf("%s",outputFileName);
-        strcpy(nmap.outputType,output[op-1]);
-        strcpy(nmap.outputFile,"src/nmapResult/");
-        strcat(nmap.outputFile,outputFileName);
-        strcat(nmap.outputFile,extension[op-1]);
-    }
-
-    printf("\nDo you want to script :\n\n0|| No\n\n1|| Yes\n\nEnter your choice : ");
-    scanf("%d", &op);
-    if(op == 1){
-        printf("\nScript : ");
-        strcpy(nmap.more, "--script ");
-        char more[100];
-        scanf("%s", more);
-        strcat(nmap.more, more);
+        else if(op == 2){
+            char ports[100];
+            printf("\nEnter ports: ");
+            scanf("%s", ports);
+            strcpy(nmap.ports,"-p ");
+            strcat(nmap.ports,ports);
+        }
+        else if(op == 3){
+            printf("\nScan Type: \n");
+            for(int i = 0; i < 4; i++){
+                printf("\n%d|| %s\n",i+1,nmapScanName[i]);
+            }
+            printf("\nEnter your choice: ");
+            scanf("%d",&type);
+            // If root access is needed.
+            if(type == 2 || type == 3 || type == 4){
+                nmap.isRoot = true;
+            }
+            // For Scan Type Only
+            strcpy(nmap.type,nmapScan[type-1]);
+        }
+        else if(op == 4){
+            printf("\nTime Format:\n\n0|| Normal\n\n1|| Paranoid\n\n2|| Sneaky\n\n3|| Polite\n\n4|| Aggressive\n\n5|| Insane\n\nEnter your choice: ");
+            scanf("%d",&op2);
+            if(op2 != 0)
+                strcpy(nmap.time, time[op]);
+        }
     }
 
     cc(nmap);
