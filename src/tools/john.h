@@ -7,48 +7,35 @@ void john(){
     strcpy(john.name,"john");
     while(true){
         banner("John");
-        printf("1|| Set Target\t\t\t\t\t\t\t");
-        if(!(strlen(john.target) == 0))
-            printf("☑");
-        else
-            printf("□");
-        printf("\n\n");
-        printf("2|| Set Wordlist\t\t\t\t\t\t");
-        if(!(strlen(john.wordlists) == 0))
-            printf("☑");
-        else
-            printf("□");
-        printf("\n\n");
-        printf("3|| Set Format\t\t\t\t\t\t\t");
-        if(!(strlen(john.format) == 0))
-            printf("☑");
-        else
-            printf("□");
-        printf("\n\n");
-        printf("0|| Next(Enter target first. Otherwise it dosn't work.)\n\n");
-        printf("Enter your choice: ");
-        scanf("%d", &op);
+        lineMark(1,"Set Target", strlen(john.target));
+        lineMark(2,"Set Wordlist", strlen(john.wordlists));
+        lineMark(3,"Set Format", strlen(john.format));
+        line(0,"Next(Enter target first. Otherwise it dosn't work.)");
+        op = intInput();
         if(op == 0){
             if(strlen(john.target) != 0){
                 break;
             }
         }
         else if(op == 1){
-            printf("\nEnter the file name with path: ");
+            heading("Enter the file name with path");
+            easyHack();
             scanf("%s",john.target);
         }
         else if(op == 2){
             char word[100];
-            printf("\nWordlists:\n\n");
+            heading("Wordlists");
             system("ls src/wordlists/john/");
-            printf("\n\nEnter wordlist name: ");
+            heading("Enter wordlist name");
+            easyHack();
             scanf("%s", word);
             strcpy(john.wordlists, "--wordlist=src/wordlists/john/");
             strcat(john.wordlists, word);
         }
         else if(op == 3){
             char format[100];
-            printf("\nEnter Format: ");
+            heading("Enter Format");
+            easyHack();
             scanf("%s", format);
             strcpy(john.format, "--format=");
             strcat(john.format, format);
