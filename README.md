@@ -89,30 +89,40 @@ gcc main.c -o main && ./main
 
 The development of **EasyHack** will follow a structured methodology:
 
-**1. Analysis:** Conduct a detailed analysis of existing penetration testing tools and their command-line requirements.
+* **1. Analysis:** Conduct a detailed analysis of existing penetration testing tools and their command-line requirements.
 
-**2. Design:** Create a robust system architecture for **EasyHack**, ensuring efficient tool management through the command line.
+* **2. Design:** Create a robust system architecture for **EasyHack**, ensuring efficient tool management through the command line.
 
-**3. Development:** Implement the command-line interface, tool library, and configuration features.
+* **3. Development:** Implement the command-line interface, tool library, and configuration features.
 
-**4. Integration:** Explore opportunities for command-line integration with other cybersecurity frameworks and tools.
+* **4. Integration:** Explore opportunities for command-line integration with other cybersecurity frameworks and tools.
 
-**5. Testing:** Rigorously test the command-line application to ensure reliability, security, and usability.
+* **5. Testing:** Rigorously test the command-line application to ensure reliability, security, and usability.
 
-**6. Documentation:** Develop comprehensive and user-friendly command-line documentation and guides.
+* **6. Documentation:** Develop comprehensive and user-friendly command-line documentation and guides.
 
-**7. Ethical Considerations:** Address ethical considerations regarding responsible tool usage within the console-based environment.
+* **7. Ethical Considerations:** Address ethical considerations regarding responsible tool usage within the console-based environment.
 
 ## Project Members
 
 **1st Programmer  : S. M Al Fuad Nur**
+
 **Programmer ID	  : 0242220005341056**
+
 **2nd Programmer  : Samin Sadaf**
+
 **Programmer ID   : 0242220005341012**
+
 **3rd Programmer  : Md. Ilias Kabir**
+
 **Programmer ID   : 0242220005341098**
+
 **4th Programmer  : Emran Hosen Shuvo**
+
 **Programmer ID   : 0242220005341082**
+
 **Section	      : B 		Batch		: 39**
+
 **Subject Name	  : Software Development Capstone Project(SE133)**
+
 **Department of Software Engineering**
