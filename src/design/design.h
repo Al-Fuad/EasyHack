@@ -8,9 +8,15 @@
 
 // To get terminal witdh
 int colWidth(){
-    struct ttysize ts;
-    ioctl(0, TIOCGSIZE, &ts);
-    return ts.ts_cols;
+    #if defined(__APPLE__)
+        struct ttysize ts;
+        ioctl(0, TIOCGSIZE, &ts);
+        return ts.ts_cols;
+    #elif defined(__linux)
+        struct winsize w;
+        ioctl(0, TIOCWINSZ, &w);
+        return w.ws_col;
+    #endif
 }
 
 // Adding padding to center some text
