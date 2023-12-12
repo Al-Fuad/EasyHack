@@ -61,7 +61,7 @@ int main()
         else if(tool == 0){
             break;
         }
-        system("read -n1 -p ' ' key");
+        system(pressEnter);
     }
     return 0;
 }

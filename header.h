@@ -4,3 +4,4 @@
 #include"src/tools/lbd.h"
 #include"src/tools/wafw00f.h"
 #include"src/tools/john.h"
+#include"os.h"
