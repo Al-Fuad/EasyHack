@@ -1,3 +1,6 @@
+#ifndef _OS_H_
+#define _OS_H_
+
 // To find os for specific cmd/shall command
 #if defined(__APPLE__)
     char * setUpFiglet = "brew install figlet";
@@ -9,6 +12,7 @@
     // LBD is not available for mac
     // char * setUpLBD = "";
 
+    char * setupLfs = "brew install git-lfs";
     char * pressEnter = "read -n1 -p ' ' key";
 
 #elif defined(__linux)
@@ -19,5 +23,8 @@
     char * setUpWafw00f = "sudo apt-get install wafw00f";
     char * setUpLBD = "sudo apt-get install ldb-tools";
     
+    char * setupLfs = "sudo apt-get install git-lfs";
     char * pressEnter = "read -p ' ' key";
+#endif
+
 #endif
