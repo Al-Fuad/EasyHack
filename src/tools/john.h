@@ -1,5 +1,6 @@
 #include "../design/design.h"
 #include "tools.h"
+#include "../../os.h"
 
 void john(){
     tool john = {'\0'};
@@ -39,7 +40,7 @@ void john(){
         }
         if(op == 4 && strlen(john.target) != 0){
             run(john);
-            system("read -n1 -p ' ' key");
+            system(pressEnter);
             strcpy(john.wordlists,"");
             strcpy(john.more, "--show");
             run(john);
