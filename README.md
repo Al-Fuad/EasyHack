@@ -1,7 +1,7 @@
 # EasyHack
 
 <p align="center">
-    <img alt="EasyHack Home Page" src="src/img/home.png" width="640">
+    <img alt="EasyHack Home Page" src="./src/img/home.png" width="640">
 </p>
 
 ---
