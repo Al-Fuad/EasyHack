@@ -3,7 +3,7 @@
 
 void lbd(){
     tool lbd = {'\0'};
-    strcpy(lbd.name,"ldb");
+    strcpy(lbd.name,"lbd");
     int op;
     while(true){
         banner("LBD");
