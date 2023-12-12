@@ -7,17 +7,14 @@ void john(){
     strcpy(john.name,"john");
     while(true){
         banner("John");
+        heading("Options");
         lineMark(1,"Set Target", strlen(john.target));
         lineMark(2,"Set Wordlist", strlen(john.wordlists));
         lineMark(3,"Set Format", strlen(john.format));
-        line(0,"Next(Enter target first. Otherwise it dosn't work.)");
+        line(4,"Next(Enter target first. Otherwise it dosn't work.)");
+        line(0,"Back");
         op = intInput();
-        if(op == 0){
-            if(strlen(john.target) != 0){
-                break;
-            }
-        }
-        else if(op == 1){
+        if(op == 1){
             heading("Enter the file name with path");
             easyHack();
             scanf("%s",john.target);
@@ -40,9 +37,16 @@ void john(){
             strcpy(john.format, "--format=");
             strcat(john.format, format);
         }
+        if(op == 4 && strlen(john.target) != 0){
+            run(john);
+            system("read -n1 -p ' ' key");
+            strcpy(john.wordlists,"");
+            strcpy(john.more, "--show");
+            run(john);
+            break;
+        }
+        else if(op == 0){
+            break;
+        }
     }
-    cc(john);
-    strcpy(john.wordlists,"");
-    strcpy(john.more, "--show");
-    cc(john);
 }
