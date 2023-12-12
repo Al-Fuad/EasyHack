@@ -27,7 +27,7 @@
 ## Platform
 
 Base: Linux, MacOS
-Tested On: MacOS
+Tested On: ParrotOS, MacOS
 
 ## Features
 
