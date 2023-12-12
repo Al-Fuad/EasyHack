@@ -89,39 +89,31 @@ gcc main.c -o main && ./main
 
 The development of **EasyHack** will follow a structured methodology:
 
-* **1. Analysis:** Conduct a detailed analysis of existing penetration testing tools and their command-line requirements.
+* **Analysis:** Conduct a detailed analysis of existing penetration testing tools and their command-line requirements.
 
-* **2. Design:** Create a robust system architecture for **EasyHack**, ensuring efficient tool management through the command line.
+* **Design:** Create a robust system architecture for **EasyHack**, ensuring efficient tool management through the command line.
 
-* **3. Development:** Implement the command-line interface, tool library, and configuration features.
+* **Development:** Implement the command-line interface, tool library, and configuration features.
 
-* **4. Integration:** Explore opportunities for command-line integration with other cybersecurity frameworks and tools.
+* **Integration:** Explore opportunities for command-line integration with other cybersecurity frameworks and tools.
 
-* **5. Testing:** Rigorously test the command-line application to ensure reliability, security, and usability.
+* **Testing:** Rigorously test the command-line application to ensure reliability, security, and usability.
 
-* **6. Documentation:** Develop comprehensive and user-friendly command-line documentation and guides.
+* **Documentation:** Develop comprehensive and user-friendly command-line documentation and guides.
 
-* **7. Ethical Considerations:** Address ethical considerations regarding responsible tool usage within the console-based environment.
+* **Ethical Considerations:** Address ethical considerations regarding responsible tool usage within the console-based environment.
 
 ## Project Members
 
-**1st Programmer  : S. M Al Fuad Nur**
+**1st Programmer  : S. M Al Fuad Nur (0242220005341056)**
 
-**Programmer ID	  : 0242220005341056**
+**2nd Programmer  : Samin Sadaf (0242220005341012)**
 
-**2nd Programmer  : Samin Sadaf**
+**3rd Programmer  : Md. Ilias Kabir (0242220005341098)**
 
-**Programmer ID   : 0242220005341012**
+**4th Programmer  : Emran Hosen Shuvo (0242220005341082)**
 
-**3rd Programmer  : Md. Ilias Kabir**
-
-**Programmer ID   : 0242220005341098**
-
-**4th Programmer  : Emran Hosen Shuvo**
-
-**Programmer ID   : 0242220005341082**
-
-**Section	      : B 		Batch		: 39**
+**Section	      : B 		    Batch		: 39**
 
 **Subject Name	  : Software Development Capstone Project(SE133)**
 
