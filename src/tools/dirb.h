@@ -8,42 +8,26 @@ void dirb(){
     strcpy(dirb.name,"dirb");
     while(true){
         banner("Dirb");
+        heading("Options");
         lineMark(1,"Set Target",strlen(dirb.target));
         lineMark(2,"Set Wordlist",strlen(dirb.wordlists));
         lineMark(3,"Set Speed",strlen(dirb.time));
         lineMark(4,"Set Extention",strlen(dirb.extention));
         lineMark(5,"Set Header",strlen(dirb.header));
         lineMark(6,"Set Ignore Response Code",strlen(dirb.ignoreCode));
-        line(0, "Next(Enter target first. Otherwise it dosn't work.)");
+        lineMark(7,"Set Saving Option",strlen(dirb.outputFile));
+        line(8, "Next(Enter target first. Otherwise it dosn't work.)");
+        line(0, "Back");
         op = intInput();
-        if(op == 0){
-            if(strlen(dirb.target) != 0){
-                heading("Do you want to save?");
-                line(1,"Yes");
-                line(2,"No");
-                op2 = intInput();
-                if(op2 == 1){
-                    char output[100];
-                    heading("Enter file name");
-                    easyHack();
-                    scanf("%s",output);
-                    strcpy(dirb.outputFile, "-o src/saves/dirb/");
-                    strcpy(dirb.outputFile, output);
-                    strcat(dirb.outputFile, ".txt");
-                }
-                break;
-            }
-        }
-        else if(op == 1){
-            heading("Enter the target");
-            easyHack();
-            scanf("%s",dirb.target);
+        if(op == 1){
+            heading("Enter The Target");
+            stringInput(dirb.target);
         }
         else if(op == 2){
             char word[100];
             heading("Wordlists");
             system("ls src/wordlists/dirb/");
-            heading("Enter wordlist name");
+            heading("Enter Wordlist Name");
             easyHack();
             scanf("%s", word);
             strcpy(dirb.wordlists, "-w src/wordlists/dirb/");
@@ -51,7 +35,7 @@ void dirb(){
         }
         else if(op == 3){
             char speed[100];
-            heading("Enter speed in milisecond");
+            heading("Enter Speed In Milisecond");
             easyHack();
             scanf("%s", speed);
             strcpy(dirb.time, "-z ");
@@ -59,7 +43,7 @@ void dirb(){
         }
         else if(op == 4){
             char exe[100];
-            heading("Enter extention name");
+            heading("Enter Extention Name");
             easyHack();
             scanf("%s", exe);
             strcpy(dirb.extention, "-X ");
@@ -67,7 +51,7 @@ void dirb(){
         }
         else if(op == 5){
             char head[100];
-            heading("Enter header name");
+            heading("Enter Header Name");
             easyHack();
             scanf("%s", head);
             strcpy(dirb.header, "-H ");
@@ -75,13 +59,27 @@ void dirb(){
         }
         else if(op == 6){
             char icode[100];
-            heading("Enter ignore response code");
+            heading("Enter Ignore Response Code");
             easyHack();
             scanf("%s", icode);
             strcpy(dirb.ignoreCode, "-N ");
             strcat(dirb.ignoreCode, icode);
         }
+        else if(op == 7){
+            char output[100];
+            heading("Enter File Name");
+            easyHack();
+            scanf("%s",output);
+            strcpy(dirb.outputFile, "-o src/saves/dirb/");
+            strcat(dirb.outputFile, output);
+            strcat(dirb.outputFile, ".txt");
+        }
+        else if(op == 8 && strlen(dirb.target) != 0){
+            run(dirb);
+            break;
+        }
+        else if(op == 0){
+            break;
+        }
     }
-
-    cc(dirb);
 }
