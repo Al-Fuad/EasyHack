@@ -24,7 +24,7 @@ struct tools
 };
 typedef struct tools tool;
 
-void cc(tool t){
+void run(tool t){
     if(t.isRoot)
         strcat(t.cmd, "sudo ");
     strcat(t.cmd,t.name);
@@ -70,11 +70,7 @@ void cc(tool t){
         strcat(t.cmd, " ");
         strcat(t.cmd, t.ignoreCode);
     }
-    puts(t.cmd);
-}
-
-void run(char cmd[100]){
-    puts(cmd);
+    system(t.cmd);
 }
 
 #endif
