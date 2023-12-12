@@ -29,55 +29,23 @@ void nmap(){
 
     while(true){
         banner("Nmap");
+        heading("Options");
         lineMark(1, "Set Target", strlen(nmap.target));
         lineMark(2, "Set Ports", strlen(nmap.ports));
         lineMark(3, "Set Scan Type", strlen(nmap.type));
         lineMark(4, "Set Speed", strlen(nmap.time));
-        line(0, "Next(Enter target first. Otherwise it dosn't work.)");
+        lineMark(5, "Set Script", strlen(nmap.more));
+        lineMark(6, "Set Saving Option", strlen(nmap.outputFile));
+        line(7, "Next(Enter target first. Otherwise it dosn't work.)");
+        line(0, "Back");
         op = intInput();
-        if(op == 0){
-            if(strlen(nmap.target) != 0){
-                heading("Do you want to save?");
-                line(1, "Yes");
-                line(2, "No");
-                op2 = intInput();
-                if(op2 == 1){
-                    heading("File Saving Format");
-                    line(1,"Text");
-                    line(2,"XML");
-                    line(3,"Script Kiddle");
-                    op3 = intInput();
-                    strcat(nmap.outputFile, output[op3-1]);
-                    strcat(nmap.outputFile, "src/saves/nmap/");
-                    char fileName[100];
-                    heading("Enter File Name");
-                    easyHack();
-                    scanf("%s",fileName);
-                    strcat(nmap.outputFile, fileName);
-                    strcat(nmap.outputFile, extension[op3-1]);
-                }
-                heading("Do you want to script?");
-                line(1,"Yes");
-                line(2,"No");
-                op2 = intInput();
-                if(op2 == 1){
-                    strcpy(nmap.more, "--script ");
-                    heading("Script");
-                    char more[100];
-                    easyHack();
-                    scanf("%s", more);
-                    strcat(nmap.more, more);
-                }
-                break;
-            }
-        }
-        else if(op == 1){
-            heading("Enter the target");
+        if(op == 1){
+            heading("Enter The Target");
             stringInput(nmap.target);
         }
         else if(op == 2){
             char ports[100];
-            heading("Enter ports");
+            heading("Enter Ports");
             easyHack();
             scanf("%s", ports);
             strcpy(nmap.ports,"-p ");
@@ -108,7 +76,35 @@ void nmap(){
             if(op2 != 0)
                 strcpy(nmap.time, time[op]);
         }
+        else if(op == 5){
+            strcpy(nmap.more, "--script ");
+            heading("Enter Script");
+            char more[100];
+            easyHack();
+            scanf("%s", more);
+            strcat(nmap.more, more);
+        }
+        else if(op == 6){
+            heading("File Saving Format");
+            line(1,"Text");
+            line(2,"XML");
+            line(3,"Script Kiddle");
+            op3 = intInput();
+            strcat(nmap.outputFile, output[op3-1]);
+            strcat(nmap.outputFile, "src/saves/nmap/");
+            char fileName[100];
+            heading("Enter File Name");
+            easyHack();
+            scanf("%s",fileName);
+            strcat(nmap.outputFile, fileName);
+            strcat(nmap.outputFile, extension[op3-1]);
+        }
+        else if(op == 7 && strlen(nmap.target) != 0){
+            run(nmap);
+            break;
+        }
+        else if(op == 0){
+            break;
+        }
     }
-
-    cc(nmap);
 }
