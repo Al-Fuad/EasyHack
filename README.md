@@ -71,17 +71,17 @@ Tested On: MacOS
 
 ## Download & Setup
 
-'''
+```
 git clone https://github.com/Al-Fuad/EasyHack.git
 cd EasyHack
 gcc setup.c -o setup && ./setup
-'''
+```
 
 ## Run
 
-'''
+```
 gcc main.c -o main && ./main
-'''
+```
 
 ## Documentation
 
