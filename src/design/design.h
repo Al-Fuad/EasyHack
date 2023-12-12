@@ -14,7 +14,7 @@ int colWidth(){
         return ts.ts_cols;
     #elif defined(__linux)
         struct winsize w;
-        ioctl(0, TIOCWINSZ, &w);
+        ioctl(0, TIOCGWINSZ, &w);
         return w.ws_col;
     #endif
 }
@@ -36,7 +36,7 @@ void banner(char name[]){
     char s[100];
     strcpy(s, "figlet -w ");
     strcat(s,c);
-    strcat(s," -c -f cyberlarge ");
+    strcat(s," -c -f src/fonts/Cyberlarge.flf ");
     strcat(s,name);
     system(s);
 }
