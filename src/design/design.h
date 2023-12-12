@@ -6,20 +6,8 @@
 #include<sys/ioctl.h>
 #include<stdlib.h>
 
-
-// To find os for specific cmd/shall command
-#if defined(__APPLE__) || defined(__linux)
-    char cls[] = "clear";
-#elif defined(_WIN32) || defined(_WIN64)
-    char cls[] = "CLS"
-#endif
-
-void banner(char name[]);
-void equalLn();
-void heading(char name[]);
-
 // To get terminal witdh
-short colWidth(){
+int colWidth(){
     struct ttysize ts;
     ioctl(0, TIOCGSIZE, &ts);
     return ts.ts_cols;
@@ -35,22 +23,19 @@ void center(int size){
 
 // Clear screen and display the banner
 void banner(char name[]){
-    system(cls);
-    equalLn();
-    heading(name);
-    equalLn();
+    system("clear");
     puts("");
-    puts("");
+    char c[100] = {0};
+    sprintf(c, "%d", colWidth());
+    char s[100];
+    strcpy(s, "figlet -w ");
+    strcat(s,c);
+    strcat(s," -c -f cyberlarge ");
+    strcat(s,name);
+    system(s);
 }
 
-// Line of equal
-void equalLn(){
-    char eq[] = "||==================================================||";
-    center(strlen(eq));
-    printf("%s",eq);
-}
-
-// Line of heading with equal
+// Line of heading
 void heading(char name[]){
     char halfeq[] = "=======================";
     int len = 2*strlen(halfeq)+strlen(name)+10;
@@ -59,8 +44,10 @@ void heading(char name[]){
     center(len);
     (strlen(name)%2!=0)? printf("||="): printf("||");
     printf("%s|| %s ||%s||\n",halfeq,name,halfeq);
+    puts("");
 }
 
+// Option with checkbox
 void lineMark(int num, char name[], int mark){
     center(70);
     printf("|| %d || %s", num,name);
@@ -70,20 +57,20 @@ void lineMark(int num, char name[], int mark){
     (mark!=0)? printf("|| ☑ ||\n"): printf("|| □ ||\n");
 }
 
+// Option without checkbox
 void line(int num, char name[]){
     center(70);
     printf("|| %d || %s\n", num,name);
 }
 
-void ques(){
-    center(70);
-}
-
+// Easy Hack
 void easyHack(){
     puts("");
     center(70);
     printf("EasyHack>>> ");
 }
+
+// Input integer numbers
 int intInput(){
     easyHack();
     int num;
@@ -91,6 +78,7 @@ int intInput(){
     return num;
 }
 
+// Input string for tools
 void stringInput(char * str){
     easyHack();
     scanf("%s", str);
