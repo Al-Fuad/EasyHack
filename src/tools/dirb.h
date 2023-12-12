@@ -21,7 +21,11 @@ void dirb(){
         op = intInput();
         if(op == 1){
             heading("Enter The Target");
-            stringInput(dirb.target);
+            strcpy(dirb.target, "http://");
+            char s[100];
+            easyHack();
+            scanf("%s", s);
+            strcat(dirb.target, s);
         }
         else if(op == 2){
             char word[100];
