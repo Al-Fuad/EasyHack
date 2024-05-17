@@ -103,19 +103,3 @@ The development of **EasyHack** will follow a structured methodology:
 * **Documentation:** Develop comprehensive and user-friendly command-line documentation and guides.
 
 * **Ethical Considerations:** Address ethical considerations regarding responsible tool usage within the console-based environment.
-
-## Project Members
-
-**1st Programmer  : S. M Al Fuad Nur (0242220005341056)**
-
-**2nd Programmer  : Samin Sadaf (0242220005341012)**
-
-**3rd Programmer  : Md. Ilias Kabir (0242220005341098)**
-
-**4th Programmer  : Emran Hosen Shuvo (0242220005341082)**
-
-**Section	      : B 		    Batch		: 39**
-
-**Subject Name	  : Software Development Capstone Project(SE133)**
-
-**Department of Software Engineering**

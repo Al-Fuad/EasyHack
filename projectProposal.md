@@ -1,33 +1,5 @@
 ![horizontal line]![horizontal line]
 
-![short line]
-
-#Project Team
-
-**1st Programmer  : S. M Al Fuad Nur**
-
-**Programmer ID	  : 0242220005341056**
-
-**2nd Programmer  : Samin Sadaf**
-
-**Programmer ID   : 0242220005341012**
-
-**3rd Programmer  : Md. Ilias Kabir**
-
-**Programmer ID   : 0242220005341098**
-
-**4th Programmer  : Emran Hosen Shuvo**
-
-**Programmer ID   : 0242220005341082**
-
-**Section	      : B 		Batch		: 39**
-
-**Subject Name	  : Software Development Capstone Project(SE133)**
-
-**Department of Software Engineering**
-
-![short line]
-
 
 
 
